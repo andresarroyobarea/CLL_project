@@ -1,4 +1,4 @@
-RNA-seq data from CLL_ES cohort in ICGC Data Portal Projects
+RNA-seq RAW data from CLL_ES cohort in ICGC Data Portal Projects
 
 https://dcc.icgc.org/releases/current/Projects/
 
