@@ -1,4 +1,4 @@
-Clinical data was downloaded from ICGC data portal at different levels:
+Clinical RAW data was downloaded from ICGC data portal at different levels:
 
 **Donor data**
 
