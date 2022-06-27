@@ -438,7 +438,7 @@ result <- result %>% select(!Gene_2) %>% relocate(hgnc_symbol, .after = Gene_1) 
 # Order data by decreasing absolute R value.
 result <- result %>% arrange(desc(abs(Correlation_Spearman)))
 
-# Save results
+# Save results in an Excel file.
 myc_results <- result
 HNRNPK_results <- result
 MCL1_results <- result
@@ -456,6 +456,5 @@ genes_corr_res <- list(MYC = myc_results,
                        SAMHD1 = SAMHD1_results)
 
 write_xlsx(genes_corr_res, "./results/CLL_genes_correlation_vs_all.xlsx")
-
 
 
