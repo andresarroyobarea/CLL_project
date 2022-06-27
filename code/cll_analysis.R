@@ -380,7 +380,7 @@ for(i in 1:length(gene_level_slp)){
 
 # This analysis was developed to evaluate possible correlations between the 6 genes and the other genes in the RNA-seq data.
 
-# Genes of interest.
+# List of 6 genes studied in survival analysis.
 # MYC: ENSG00000136997
 # HNRNPK: ENSG00000165119
 # MCL1: ENSG00000143384
@@ -438,7 +438,7 @@ result <- result %>% select(!Gene_2) %>% relocate(hgnc_symbol, .after = Gene_1) 
 # Order data by decreasing absolute R value.
 result <- result %>% arrange(desc(abs(Correlation_Spearman)))
 
-# Save results in an Excel file.
+# Save results in an Excel file. 
 myc_results <- result
 HNRNPK_results <- result
 MCL1_results <- result
