@@ -6,7 +6,12 @@ library(survminer)
 library(cutpointr)
 library(biomaRt)
 library(stringr)
+library(edgeR)
 library(ggplot2)
+library(Hmisc)
+library(genefilter)
+library(writexl)
+library(psych)
 
 mart <- useDataset("hsapiens_gene_ensembl", useMart("ensembl"))
 
@@ -115,8 +120,16 @@ preproc_surv <- function(data, gene_var){
   cll_donor_data
 }
 
+
+f.shapiro.stat <- function(x, n_diff_numbers = 3) {
+  res <- ifelse(sum(!is.na(unique(x))) < n_diff_numbers, NA, as.numeric(shapiro.test(x)$p.value))
+  return(res)
+}
+
+
+
 # 0. IMPORT RNA-SEQ DATA --------------------------------------------------------------------------------------------------------------------
-cll_data <- read.table("./data/raw_data/exp_seq_CLLE_ES.tsv", sep = "\t", header = T)
+cll_data <- read.table("./data/exp_seq_CLLE_ES.tsv", sep = "\t", header = T)
 
 # 1. PREPROCESSING DATA TO RAW COUNTS MATRIX ------------------------------------------------------------------------------------------------
 # Select only columns of interest (donor, specimen, gene ensembl id y raw read counts)
@@ -186,7 +199,7 @@ cll_data_id_version <- do.call("cbind", cll_data_id_version_list)
 # Ensembl id were fixed as rownames.
 rownames(cll_data_id_version) <- cll_data_id_version$DO223355.gene_id
 
-# ¿Are the ensembl id ordered in the same way for all donors? Like we found duplicated columns, we can afirm it.
+# ¿Are the ensembl id ordered in the same way for all donors? Like we found duplicated columns, we can affirm it.
 table(duplicated(as.list(cll_data_id_version)) == TRUE)
 
 # Duplicated ensembl id are in odd columns and ther were depleted.
@@ -206,13 +219,20 @@ table(is.na(cll_data_id_version))
 # Donors were saved for further analysis.
 cll_donors <- colnames(cll_data_id_version)
 
-rm(cll_data, cll_data_id_version_list)
+# Specimens were saved 
+cll_specimens_rna_seq <- cll_rna_seq_donors_spec_id_version$icgc_specimen_id
+
+# Raw RNA-seq count matrix was saved.
+write.table(cll_data_id_version, "./data/rna_seq_count_matrix_raw.tsv", sep = "\t", row.names = TRUE, col.names = TRUE)
+
+rm(cll_data)
 
 # 2. PREPROCESSING METADATA ---------------------------------------------------------------------------------------------------------
 
 ## 2.1 Donor data
-cll_donor_data <- read.table("./metadata/clinical_data_cll/donor.tsv", sep = "\t", header = T)
+cll_donor_data <- read.table("./metadata/clinical_raw_metadata/donor.tsv", sep = "\t", header = T)
 
+# Last followup time is equal to survival time for this data.
 table(cll_donor_data$donor_interval_of_last_followup == cll_donor_data$donor_survival_time)
 
 # Select relevant information.
@@ -229,9 +249,9 @@ cll_donor_data <- cll_donor_data %>% relocate(icgc_specimen_id, .after = icgc_do
 colnames(cll_donor_data[2]) <- "icgc_rna_seq_specimen_id"
 
 # Recode vital status: decesased (1) and alive (0)
-cll_donor_data$vital_status <- as.factor(ifelse(cll_donor_data$vital_status == "deceased", 1, 0))
+cll_donor_data$vital_status <- as.numeric(ifelse(cll_donor_data$vital_status == "deceased", 1, 0))
 
-# Recode vital status: male (1) and female (0)
+# Recode sex : male (1) and female (0)
 cll_donor_data$sex <- as.factor(ifelse(cll_donor_data$sex == "male", 1, 0))
 
 # Unknown class in disease status
@@ -253,7 +273,7 @@ cll_donor_data$disease_status_last_followup <- recode_factor(cll_donor_data$dise
 
 # Change relapse type codification. We suppose that individuals categorized as "progression" suffered a relapse while 
 # individuals with no information, did not suffere any relaps episode. Relapse was codified as 1 and non-relapse as 0.
-cll_donor_data$relapse_type <- as.factor(ifelse(cll_donor_data$relapse_type == "progression (liquid tumours)", 1, 0))
+cll_donor_data$relapse_type <- as.numeric(ifelse(cll_donor_data$relapse_type == "progression (liquid tumours)", 1, 0))
 colnames(cll_donor_data)[7] <- "relapse_interval_SLP"
 
 # Add SLP
@@ -276,6 +296,9 @@ cll_donor_data <- merge(cll_donor_data, library_size, by = "icgc_donor_id")
 cll_donor_data$disease_status_last_followup <- as.factor(cll_donor_data$disease_status_last_followup)
 cll_donor_data$tumour_stage_at_diagnosis <- as.factor(cll_donor_data$tumour_stage_at_diagnosis)
 
+# Save metadata
+write.csv(cll_donor_data, "./metadata/clinical_prepr_metadata/cll_metadata.csv", sep = ",", col.names = TRUE,
+          row.names = F)
 
 # 3. NORMALIZATION WITH DESEQ2 -----------------------------------------------------------------------------------------------
 dds_cll_data <- DESeqDataSetFromMatrix(countData = cll_data_id_version,
@@ -289,16 +312,19 @@ dds_cll_data <- estimateSizeFactors(dds_cll_data)
 # Extract normalized count matrix. This matrix ONLY WILL BE USED TO EXTRACT INFO FOR SURVIVAL ANALYSIS. FOR DGE STUDIES, A PREVIOUS FILTERING IS RECOMMENDED.
 cll_data_norm <- as.data.frame(counts(dds_cll_data, normalized = TRUE))
 
+# Save RNA-seq count matrix normalized.
+write.table(cll_data_norm, "./data/rna_seq_count_matrix_norm.tsv", sep = "\t", row.names = TRUE, col.names = TRUE)
+
 
 # 4. SURVIVAL ANALYSIS --------------------------------------------------------------------------------------------------------
 # 4.1 Extract specific gene expression and add to metadata. ENSG00000136997.10 is the MYC ensembl identifier.
 cll_donor_data <- cll_donor_data[, -11]
-cll_donor_data <- add_ge_metadat("ENSG00000103335")
+cll_donor_data <- add_ge_metadat("ENSG00000143384")
 colnames(cll_donor_data)
 
 # 4.2 Fix cutfoffs to dicide gene expression into high and low using the metrics used below.
 cll_donor_data_surv <- cll_donor_data[, -c(11:20)]
-cll_donor_data_surv <- preproc_surv(cll_donor_data, "PIEZO1_exp")
+cll_donor_data_surv <- preproc_surv(cll_donor_data, "MCL1_exp")
 
 # Recode SLP and SG as numeric to plot results.
 cll_donor_data_surv$vital_status <- as.numeric(cll_donor_data_surv$vital_status)
@@ -312,9 +338,11 @@ colnames(cll_donor_data_surv)
 gene_level_slp <- colnames(cll_donor_data_surv)[c(12, 14, 16:20)]
 gene_level_slp
 
+
 # Storing the variables used to divide gene expression into high and low for SG.
 gene_level_sg <- colnames(cll_donor_data_surv)[c(13, 15, 16:20)]
 gene_level_sg
+
 
 # Bucle to generate several plots in once time and save them into a file.
 for(i in 1:length(gene_level_slp)){
@@ -344,4 +372,90 @@ for(i in 1:length(gene_level_slp)){
   )
   dev.off()
 }
+
+
+
+
+# 5. GENE-GENE CORRELATION ANALYSIS --------------------------------------------------------------------------------------------------------
+
+# This analysis was developed to evaluate possible correlations between the 6 genes and the other genes in the RNA-seq data.
+
+# Genes of interest.
+# MYC: ENSG00000136997
+# HNRNPK: ENSG00000165119
+# MCL1: ENSG00000143384
+# NCL: ENSG00000115053
+# PIEZO1: ENSG00000103335
+# SAMHD1: ENSG00000101347
+
+our_genes <- c("ENSG00000136997", "ENSG00000165119", "ENSG00000143384", "ENSG00000115053", "ENSG00000103335", "ENSG00000101347")
+
+# Counts as column to evaluate correlation.
+counts <- as.data.frame(t(as.matrix(cll_data_norm)))
+
+# Ensembl ID code.
+colnames(counts) <- gsub("\\..*", "", colnames(counts))
+
+# Next piece of code was used to extract the correlation tables for each gene.
+
+# Correlation analysis between a gene and the rest.
+corr_an <- corr.test(counts[, "ENSG00000101347"], counts, method = "spearman", adjust = "fdr")
+
+# Correlation values extraction.
+corr <- as.data.frame(t(as.matrix(corr_an$r)))
+corr$Gene_1 <- "SAMHD1"
+colnames(corr)[1] <- "Correlation_Spearman"
+
+# P-values extraction for each pairs of correlated genes.  
+p_v <- as.data.frame(t(as.matrix(corr_an$p)))
+colnames(p_v) <- "P_value"
+  
+# P-adj extraction for each pairs of correlated genes.  
+p_adj <- as.data.frame(t(as.matrix(corr_an$p.adj)))
+colnames(p_adj)[1] <- "P_adj"
+p_adj$Gene_2 <- rownames(p_adj)
+
+# Merging results
+result <- merge(corr, p_v, by = 0)
+colnames(result)[1] <- "Gene_2"
+result <- merge(result, p_adj, by = "Gene_2")
+result <- result[, c(3, 1, 2, 4, 5)]
+
+# Selecting correlation pairs without NA values, with absolute R upper 0.2 and p-adjuted upper 0.05.
+result <- result %>% filter(!(is.na(Correlation_Spearman)) & P_adj < 0.05 & abs(Correlation_Spearman) > 0.2 & Gene_2 != "ENSG00000101347") 
+
+# Round correlation values
+result$Correlation_Spearman <- round(result$Correlation_Spearman, 2)
+
+# Substitution of Ensembl ID codes for Gene symbols.
+symbols <- getBM(filters = "ensembl_gene_id", attributes = c("hgnc_symbol", "ensembl_gene_id"), values = result$Gene_2, mart =  mart)
+colnames(symbols)[2] <- "Gene_2"                  
+result <- merge(result, symbols, by = "Gene_2", all = TRUE)
+result$hgnc_symbol[result$hgnc_symbol == ""] <- NA
+result$hgnc_symbol <- ifelse(is.na(result$hgnc_symbol), result$Gene_2, result$hgnc_symbol)
+result <- result %>% select(!Gene_2) %>% relocate(hgnc_symbol, .after = Gene_1) %>% rename(Gene_2 = hgnc_symbol)
+  
+# Order data by decreasing absolute R value.
+result <- result %>% arrange(desc(abs(Correlation_Spearman)))
+
+# Save results
+myc_results <- result
+HNRNPK_results <- result
+MCL1_results <- result
+NCL_results <- result
+PIEZO1_results <- result
+SAMHD1_results <- result
+  
+rm(symbols, result, p_v, p_adj, corr_an, corr)
+
+genes_corr_res <- list(MYC = myc_results, 
+                       HNRNPK = HNRNPK_results,
+                       MCL1 = MCL1_results,
+                       NCL = NCL_results,
+                       PIEZO1 = PIEZO1_results,
+                       SAMHD1 = SAMHD1_results)
+
+write_xlsx(genes_corr_res, "./results/CLL_genes_correlation_vs_all.xlsx")
+
+
 
