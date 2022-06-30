@@ -236,12 +236,12 @@ cll_donor_data <- read.table("./metadata/clinical_raw_metadata/donor.tsv", sep =
 table(cll_donor_data$donor_interval_of_last_followup == cll_donor_data$donor_survival_time)
 
 # Select relevant information.
-cll_donor_data <- cll_donor_data %>% dplyr::select(icgc_donor_id, donor_sex, donor_vital_status, disease_status_last_followup, donor_relapse_type, donor_relapse_interval, donor_tumour_stage_at_diagnosis,
+cll_donor_data <- cll_donor_data %>% dplyr::select(icgc_donor_id, donor_age_at_diagnosis, donor_sex, donor_vital_status, disease_status_last_followup, donor_relapse_type, donor_relapse_interval, donor_tumour_stage_at_diagnosis,
                                             donor_survival_time)
 
 # Rename columns
-colnames(cll_donor_data)[2:8] <- gsub(pattern = "donor_", replacement = "", x = colnames(cll_donor_data)[2:8])
-colnames(cll_donor_data)[8] <- "survival_time_last_followup_SG"
+colnames(cll_donor_data)[2:9] <- gsub(pattern = "donor_", replacement = "", x = colnames(cll_donor_data)[2:9])
+colnames(cll_donor_data)[9] <- "survival_time_last_followup_SG"
 
 # Add specimen RNA-seq info.
 cll_donor_data <- merge(cll_donor_data, cll_rna_seq_donors_spec, by = "icgc_donor_id")
@@ -252,7 +252,7 @@ colnames(cll_donor_data[2]) <- "icgc_rna_seq_specimen_id"
 cll_donor_data$vital_status <- as.numeric(ifelse(cll_donor_data$vital_status == "deceased", 1, 0))
 
 # Recode sex : male (1) and female (0)
-cll_donor_data$sex <- as.factor(ifelse(cll_donor_data$sex == "male", 1, 0))
+#cll_donor_data$sex <- as.factor(ifelse(cll_donor_data$sex == "male", 1, 0))
 
 # Unknown class in disease status
 cll_donor_data$disease_status_last_followup[cll_donor_data$disease_status_last_followup == ""] <- "unknown"
@@ -274,7 +274,7 @@ cll_donor_data$disease_status_last_followup <- recode_factor(cll_donor_data$dise
 # Change relapse type codification. We suppose that individuals categorized as "progression" suffered a relapse while 
 # individuals with no information, did not suffere any relaps episode. Relapse was codified as 1 and non-relapse as 0.
 cll_donor_data$relapse_type <- as.numeric(ifelse(cll_donor_data$relapse_type == "progression (liquid tumours)", 1, 0))
-colnames(cll_donor_data)[7] <- "relapse_interval_SLP"
+colnames(cll_donor_data)[8] <- "relapse_interval_SLP"
 
 # Add SLP
 cll_donor_data <- cll_donor_data %>% mutate(relapse_interval_SLP = ifelse(relapse_type == 0, survival_time_last_followup_SG, relapse_interval_SLP))
@@ -295,6 +295,8 @@ cll_donor_data <- merge(cll_donor_data, library_size, by = "icgc_donor_id")
 # Factorise metadata columns.
 cll_donor_data$disease_status_last_followup <- as.factor(cll_donor_data$disease_status_last_followup)
 cll_donor_data$tumour_stage_at_diagnosis <- as.factor(cll_donor_data$tumour_stage_at_diagnosis)
+cll_donor_data$sex <- as.factor(cll_donor_data$sex)
+
 
 # Save metadata
 write.csv(cll_donor_data, "./metadata/clinical_prepr_metadata/cll_metadata.csv", sep = ",", col.names = TRUE,
@@ -319,12 +321,12 @@ write.table(cll_data_norm, "./data/rna_seq_count_matrix_norm.tsv", sep = "\t", r
 # 4. SURVIVAL ANALYSIS --------------------------------------------------------------------------------------------------------
 # 4.1 Extract specific gene expression and add to metadata. ENSG00000136997.10 is the MYC ensembl identifier.
 cll_donor_data <- cll_donor_data[, -11]
-cll_donor_data <- add_ge_metadat("ENSG00000143384")
+cll_donor_data <- add_ge_metadat("ENSG00000136997")
 colnames(cll_donor_data)
 
 # 4.2 Fix cutfoffs to dicide gene expression into high and low using the metrics used below.
 cll_donor_data_surv <- cll_donor_data[, -c(11:20)]
-cll_donor_data_surv <- preproc_surv(cll_donor_data, "MCL1_exp")
+cll_donor_data_surv <- preproc_surv(cll_donor_data, "MYC_exp")
 
 # Recode SLP and SG as numeric to plot results.
 cll_donor_data_surv$vital_status <- as.numeric(cll_donor_data_surv$vital_status)
@@ -456,5 +458,95 @@ genes_corr_res <- list(MYC = myc_results,
                        SAMHD1 = SAMHD1_results)
 
 write_xlsx(genes_corr_res, "./results/CLL_genes_correlation_vs_all.xlsx")
+
+
+rm(HNRNPK_results, MCL1_results, SAMHD1_results, PIEZO1_results, NCL_results, genes_corr_res, result, symbols, myc_results)
+
+# 6. QUALITATIVE ANALYSIS  ---------------------------------------------------------
+
+# Generate metadata with gene expression levels by maxstat SLP.
+cll_donor_data <- read.csv("./metadata/clinical_prepr_metadata/cll_metadata.csv", head = T, sep = ",")
+
+# Recode Binet
+cll_donor_data$tumour_stage_at_diagnosis[cll_donor_data$tumour_stage_at_diagnosis == "B"] <- "B-C"
+cll_donor_data$tumour_stage_at_diagnosis[cll_donor_data$tumour_stage_at_diagnosis == "C"] <- "B-C"
+
+# List of 6 genes studied in survival analysis.
+# MYC: ENSG00000136997
+# HNRNPK: ENSG00000165119
+# MCL1: ENSG00000143384
+# NCL: ENSG00000115053
+# PIEZO1: ENSG00000103335
+# SAMHD1: ENSG00000101347
+
+
+cll_donor_data <- add_ge_metadat("ENSG00000101347")
+cll_donor_data <- preproc_surv(cll_donor_data, "SAMHD1_exp")
+
+cll_donor_data <- cll_donor_data %>% select(icgc_donor_id:library_size, MYC_level_maxstat_SLP, HNRNPK_level_maxstat_SLP,
+                                            PIEZO1_level_maxstat_SLP, SAMHD1_level_maxstat_SLP, NCL_level_maxstat_SLP, MCL1_level_maxstat_SLP)
+
+# Import specimen info.
+specimen_data <- read.table("./metadata/clinical_raw_metadata/specimen.tsv", header = T, sep = "\t")
+
+# Select relevant variables
+specimen_data <- specimen_data %>% select(icgc_specimen_id, specimen_donor_treatment_type, tumour_stage)
+
+# Merged with donor metadata RNA-seq
+cll_donor_data <- merge(cll_donor_data, specimen_data, by = "icgc_specimen_id")
+
+cll_donor_data$specimen_donor_treatment_type[cll_donor_data$specimen_donor_treatment_type == ""] <- NA
+
+# Recode age
+cll_donor_data$age_at_diagnosis <- as.factor(ifelse(cll_donor_data$age_at_diagnosis > 65, "> 65", "< 65"))
+
+# Therapy data
+therapy_data <- read.table("./metadata/clinical_raw_metadata/donor_therapy.tsv", header = T, sep = "\t")
+therapy_data <- therapy_data %>% select(icgc_donor_id, first_therapy_type, first_therapy_therapeutic_intent, second_therapy_type, second_therapy_therapeutic_intent, other_therapy)
+
+# Substitution "other therapy" for "mostly chemo and monoclonal..." in columns first_therapy_type and second_therapy_type.
+therapy_data$first_therapy_type <- ifelse(therapy_data$first_therapy_type == "other therapy", therapy_data$other_therapy, therapy_data$first_therapy_type)
+therapy_data$second_therapy_type <- ifelse(therapy_data$second_therapy_type == "other therapy", therapy_data$other_therapy, therapy_data$second_therapy_type)
+
+# Remove other therapy colums
+therapy_data <- therapy_data %>% select(-other_therapy)
+therapy_data$received_first_treatment <- ifelse(therapy_data$first_therapy_type == "no treatment", "no", "yes")
+therapy_data$received_second_treatment <- ifelse(therapy_data$second_therapy_type == "no treatment", "no", "yes")
+
+# Merge with donor data.
+cll_donor_data <- merge(cll_donor_data, therapy_data, by = "icgc_donor_id", all = TRUE)
+
+# Select patients with RNA-seq data
+cll_donor_data <- cll_donor_data %>% filter(!is.na(MYC_level_maxstat_SLP))
+
+# IGHV mutated
+cll_donor_data$IGHV_status <- cll_donor_data$tumour_stage
+cll_donor_data$IGHV_status[cll_donor_data$IGHV_status == "A"] <- NA
+cll_donor_data$IGHV_status[cll_donor_data$IGHV_status == "B"] <- NA
+cll_donor_data$IGHV_status[cll_donor_data$IGHV_status == "C"] <- NA
+cll_donor_data$IGHV_status[cll_donor_data$IGHV_status == ""] <- NA
+
+
+# Variables to analyze.
+# BINET (TUMOR STAGE AT DIAGNOSIS): A and B-C
+# SEX: MALE and FEMALE
+# AGE: > 65 AND < 65
+# VITAL STATUS: ALIVE and DECEASED
+# RELAPSE TYPE: RELAPSE and NON-RELAPSE
+# IGHV STATUS: Mutated OR Unmutated
+# FIRST THERAPY RECEIVED: yes or no
+# FIRST THERAPY THERAPEUTHIC INTENT: curative and palliative
+# SECOND THERAPY RECEIVED: yes or no
+# SECOND THERAPY THERAPEUTHIC INTENT: curative vs palliative,
+
+cll_donor_data %>% filter(!(is.na(IGHV_status))) %>% select(PIEZO1_level_maxstat_SLP, IGHV_status) %>% table() %>% fisher.test()
+
+# Save complete metadata
+
+write.csv(cll_donor_data, "./metadata/clinical_prepr_metadata/cll_clinical_data.csv", row.names = F)
+
+
+rm(list = ls())
+
 
 

@@ -1,0 +1,295 @@
+icgc_donor_id,icgc_specimen_id,age_at_diagnosis,sex,vital_status,disease_status_last_followup,relapse_type,relapse_interval_SLP,tumour_stage_at_diagnosis,survival_time_last_followup_SG,specimen_donor_treatment_type,tumour_stage,IGHV_status,library_size,MYC_level_maxstat_SLP,HNRNPK_level_maxstat_SLP,PIEZO1_level_maxstat_SLP,SAMHD1_level_maxstat_SLP,NCL_level_maxstat_SLP,MCL1_level_maxstat_SLP,first_therapy_type,first_therapy_therapeutic_intent,second_therapy_type,second_therapy_therapeutic_intent,received_first_treatment,received_second_treatment
+DO223355,SP130146,< 65,male,0,complete_remission,1,1694,A,4291,NA,,,173289951,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223356,SP130153,< 65,male,1,unknown,1,NA,B-C,2223,NA,,,180682209,high,low,low,low,low,high,NA,NA,NA,NA,NA,NA
+DO223357,SP130154,< 65,female,0,complete_remission,1,24,B-C,1436,NA,,,185100243,low,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO223358,SP130155,> 65,female,0,stable,0,2800,A,2800,NA,,,191906616,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223359,SP130156,> 65,male,0,stable,0,1170,A,1170,NA,,,117452566,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223360,SP130157,< 65,male,0,stable,0,2442,A,2442,NA,,,130335032,high,low,low,low,low,high,NA,NA,NA,NA,NA,NA
+DO223361,SP130158,> 65,male,0,progression,1,718,A,1661,NA,,,122911221,low,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO223362,SP130159,< 65,male,0,progression,1,274,A,1287,NA,,,146011447,high,high,low,low,high,low,NA,NA,NA,NA,NA,NA
+DO223363,SP130162,< 65,male,0,progression,1,2045,A,2085,NA,,,178899999,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223364,SP130163,< 65,female,0,stable,0,2478,A,2478,NA,,,148607530,low,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO223365,SP130164,< 65,female,0,stable,0,3635,A,3635,NA,,,120730559,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223366,SP130165,> 65,male,0,progression,1,849,A,1989,NA,,,148652371,low,low,high,high,low,high,NA,NA,NA,NA,NA,NA
+DO223367,SP130166,> 65,female,0,stable,0,2115,A,2115,NA,,,149323080,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223368,SP130167,> 65,female,0,progression,1,3853,A,3853,NA,,,156895864,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223369,SP130168,> 65,male,0,complete_remission,1,528,A,1477,NA,,,206884815,low,high,low,high,high,high,NA,NA,NA,NA,NA,NA
+DO223370,SP130169,> 65,male,0,complete_remission,0,1055,B-C,1055,NA,,,185552893,high,high,low,low,low,high,NA,NA,NA,NA,NA,NA
+DO223371,SP130171,< 65,female,1,progression,1,656,A,845,NA,,,200231637,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223372,SP130172,> 65,female,0,progression,1,1108,A,2277,NA,,,213218630,low,high,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO223374,SP130173,< 65,male,1,partial_remission,1,272,A,1032,NA,,,148122607,high,high,high,low,low,low,NA,NA,NA,NA,NA,NA
+DO223376,SP130175,> 65,male,0,stable,0,582,A,582,NA,,,173516307,low,low,high,low,low,low,NA,NA,NA,NA,NA,NA
+DO223377,SP130176,< 65,male,0,stable,0,2276,A,2276,NA,,,179709842,high,high,low,high,low,high,NA,NA,NA,NA,NA,NA
+DO223378,SP130177,> 65,female,0,stable,0,2736,A,2736,NA,,,153224018,high,high,low,high,low,high,NA,NA,NA,NA,NA,NA
+DO223379,SP130178,< 65,female,0,stable,0,5408,A,5408,NA,,,183158631,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223380,SP130179,> 65,female,0,stable,0,2023,A,2023,NA,,,114536881,low,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO223381,SP130180,> 65,female,1,progression,1,3555,A,3612,NA,,,208774759,high,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223382,SP130181,< 65,male,0,stable,0,3278,A,3278,NA,,,159676393,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223383,SP130182,> 65,male,0,stable,0,3803,A,3803,NA,,,234265422,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223384,SP130183,< 65,female,0,stable,0,2027,A,2027,NA,,,166621364,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223385,SP130184,> 65,male,0,stable,0,3213,A,3213,NA,,,193050302,low,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO223386,SP130185,> 65,male,0,progression,1,616,B-C,646,NA,,,207118813,low,high,low,low,high,low,NA,NA,NA,NA,NA,NA
+DO223387,SP130186,< 65,male,0,stable,0,7558,A,7558,NA,,,238926612,low,high,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO223388,SP130187,< 65,female,0,partial_remission,1,1307,B-C,2385,NA,,,208576484,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223389,SP130188,> 65,male,0,complete_remission,1,959,B-C,1165,NA,,,227276872,high,low,high,high,low,low,NA,NA,NA,NA,NA,NA
+DO223390,SP130189,< 65,male,0,complete_remission,1,41,B-C,2023,NA,,,204432203,low,high,high,high,low,low,NA,NA,NA,NA,NA,NA
+DO223391,SP130190,< 65,female,0,stable,0,1568,A,1568,NA,,,171259954,low,high,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223392,SP130191,< 65,male,0,stable,0,2827,B-C,2827,NA,,,153420162,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223393,SP130192,< 65,male,0,stable,0,2215,A,2215,NA,,,263315635,high,high,high,low,high,low,NA,NA,NA,NA,NA,NA
+DO223394,SP130193,< 65,male,0,stable,0,1172,A,1172,NA,,,225738489,high,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223396,SP130194,< 65,male,0,stable,0,955,A,955,NA,,,286635353,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223397,SP130195,> 65,female,1,progression,1,1960,A,2350,NA,,,189617457,low,low,high,high,low,low,NA,NA,NA,NA,NA,NA
+DO223398,SP130196,> 65,male,1,progression,1,1607,A,2163,NA,,,185774272,high,low,high,high,low,low,NA,NA,NA,NA,NA,NA
+DO223399,SP130198,< 65,female,0,stable,0,996,A,996,NA,,,169158287,high,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223400,SP130199,< 65,female,0,stable,0,2204,A,2204,NA,,,133614009,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223401,SP130201,< 65,male,0,stable,0,3364,A,3364,NA,,,175135701,high,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO223402,SP130203,< 65,female,0,complete_remission,1,249,A,822,NA,,,141344726,high,low,high,high,low,low,NA,NA,NA,NA,NA,NA
+DO223403,SP130204,> 65,female,0,stable,0,1384,A,1384,NA,,,136756730,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223404,SP130205,< 65,female,0,partial_remission,1,699,A,1435,NA,,,140112760,low,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO223406,SP130206,< 65,male,0,stable,0,730,A,730,NA,,,229636119,low,high,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO223407,SP130207,> 65,male,0,stable,1,1424,A,1921,NA,,,249301160,high,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223408,SP130208,< 65,male,0,stable,0,969,A,969,NA,,,255567805,low,high,high,high,low,low,NA,NA,NA,NA,NA,NA
+DO223409,SP130209,< 65,male,0,complete_remission,1,3356,A,3881,NA,,,149613253,high,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223410,SP130210,> 65,female,0,complete_remission,1,9,A,2912,NA,,,137260262,high,low,high,high,low,low,NA,NA,NA,NA,NA,NA
+DO223412,SP130211,> 65,female,0,stable,1,NA,B-C,694,NA,,,124814751,high,low,high,high,low,low,NA,NA,NA,NA,NA,NA
+DO223413,SP130212,< 65,male,0,complete_remission,0,1388,unknown,1388,NA,,,132391970,high,low,high,low,low,low,NA,NA,NA,NA,NA,NA
+DO223414,SP130213,< 65,male,0,complete_remission,1,248,B-C,1883,NA,,,262272634,high,high,low,low,low,high,NA,NA,NA,NA,NA,NA
+DO223415,SP130214,< 65,female,0,complete_remission,0,714,B-C,714,NA,,,210985259,low,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO223416,SP130215,NA,female,0,complete_remission,0,NA,A,NA,NA,,,211271800,high,low,low,high,low,high,NA,NA,NA,NA,NA,NA
+DO223417,SP130216,< 65,female,0,stable,0,739,A,739,NA,,,218196213,low,low,high,high,low,low,NA,NA,NA,NA,NA,NA
+DO223418,SP130217,< 65,female,0,stable,0,1395,A,1395,NA,,,162848973,high,low,high,high,low,low,NA,NA,NA,NA,NA,NA
+DO223419,SP130218,> 65,male,0,stable,0,2108,A,2108,NA,,,206516458,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223420,SP130219,< 65,male,0,stable,0,2197,A,2197,NA,,,152114612,low,low,high,high,low,low,NA,NA,NA,NA,NA,NA
+DO223421,SP130220,< 65,male,0,complete_remission,1,188,B-C,802,NA,,,191671318,high,high,low,low,low,high,NA,NA,NA,NA,NA,NA
+DO223422,SP130221,< 65,female,0,complete_remission,1,1216,A,1707,NA,,,132547962,low,low,high,high,low,low,NA,NA,NA,NA,NA,NA
+DO223423,SP130222,< 65,male,0,stable,0,571,A,571,NA,,,167033912,low,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO223424,SP130223,> 65,male,0,stable,0,859,A,859,NA,,,239994463,high,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223425,SP130224,< 65,male,0,stable,0,537,A,537,NA,,,257590168,high,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223426,SP130225,> 65,male,0,complete_remission,1,2203,A,2701,NA,,,179710102,high,high,low,high,low,high,NA,NA,NA,NA,NA,NA
+DO223427,SP130226,< 65,female,0,stable,1,581,A,686,NA,,,180197296,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223428,SP130227,> 65,female,0,progression,1,979,A,1532,NA,,,202499936,low,low,high,high,low,low,NA,NA,NA,NA,NA,NA
+DO223429,SP130229,< 65,male,0,stable,0,1628,A,1628,NA,,,196619085,low,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO223430,SP130230,< 65,male,0,stable,0,415,A,415,NA,,,186681204,high,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223431,SP130231,> 65,male,0,stable,0,4418,A,4418,NA,,,198153030,low,high,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO223432,SP130233,< 65,male,0,stable,0,418,B-C,418,NA,,,192364988,high,low,high,high,low,low,NA,NA,NA,NA,NA,NA
+DO223433,SP130234,< 65,female,0,progression,1,1522,A,3025,NA,,,201681888,low,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO223434,SP130235,> 65,female,0,stable,0,539,A,539,NA,,,209736636,low,low,high,high,low,low,NA,NA,NA,NA,NA,NA
+DO223436,SP130236,> 65,female,0,stable,0,600,A,600,NA,,,221033466,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223437,SP130237,< 65,female,0,stable,0,1313,A,1313,NA,,,209014479,low,low,high,low,low,low,NA,NA,NA,NA,NA,NA
+DO223438,SP130238,< 65,male,0,complete_remission,0,266,B-C,266,NA,,,242732358,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223439,SP130239,> 65,male,0,stable,0,459,A,459,NA,,,218060219,high,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223440,SP130240,< 65,male,0,progression,1,4881,B-C,5315,NA,,,168035641,high,high,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO223441,SP130241,> 65,male,0,stable,0,665,A,665,NA,,,222159477,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223442,SP130242,> 65,male,0,stable,0,186,A,186,NA,,,196628076,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO223443,SP130243,> 65,male,0,stable,0,204,A,204,NA,,,192005569,low,low,high,high,low,low,NA,NA,NA,NA,NA,NA
+DO51966,SP114999,< 65,female,1,stable,1,3586,A,5281,no treatment,,Mutated,244569384,high,high,high,high,high,high,NA,NA,NA,NA,NA,NA
+DO51967,SP124179,< 65,female,0,complete_remission,1,5018,A,6099,no treatment,B,,149996084,high,low,low,high,low,low,mostly chemo and monoclonal antibody anti CD52,curative,chemotherapy,curative,yes,yes
+DO51968,SP115002,> 65,male,0,stable,0,3681,A,3681,no treatment,,Mutated,157025761,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO51969,SP115003,> 65,female,0,stable,0,3808,A,3808,no treatment,,Mutated,148601160,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO51970,SP115004,> 65,male,0,stable,0,5229,A,5229,no treatment,,Mutated,140823960,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO51971,SP115005,> 65,male,0,stable,0,4316,A,4316,no treatment,,Mutated,186501447,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO51972,SP115006,> 65,male,1,stable,0,7374,A,7374,no treatment,,Mutated,143124152,low,high,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO51973,SP115007,< 65,male,0,stable,0,2877,A,2877,no treatment,,Mutated,145362298,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO51975,SP115009,> 65,male,0,complete_remission,1,843,A,1911,no treatment,,Mutated,173706537,high,low,high,high,low,low,NA,NA,NA,NA,NA,NA
+DO51976,SP115010,< 65,female,0,stable,0,1961,A,1961,no treatment,,Mutated,110441966,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO51977,SP115011,> 65,male,0,stable,0,2628,A,2628,no treatment,,Mutated,193441281,high,low,low,high,low,high,NA,NA,NA,NA,NA,NA
+DO51978,SP115012,> 65,female,0,stable,0,2495,A,2495,no treatment,,Mutated,375285555,low,high,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO51979,SP115013,< 65,male,0,stable,0,21,A,21,no treatment,,Mutated,189378899,high,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO51980,SP115014,< 65,female,0,stable,0,1969,A,1969,no treatment,,Mutated,127490658,low,low,low,high,high,low,NA,NA,NA,NA,NA,NA
+DO51981,SP115015,< 65,female,0,stable,0,3778,A,3778,no treatment,,Mutated,134607552,high,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO51983,SP115017,> 65,male,0,stable,0,3157,A,3157,no treatment,,Mutated,175315808,low,low,high,high,low,low,NA,NA,NA,NA,NA,NA
+DO51984,SP115018,< 65,male,0,stable,0,2670,A,2670,no treatment,,Mutated,193155525,low,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO51985,SP115019,< 65,male,0,stable,0,1750,A,1750,no treatment,,Mutated,217205206,low,high,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO51986,SP115020,< 65,female,0,stable,0,3702,A,3702,no treatment,,Mutated,211958279,high,high,low,high,high,high,NA,NA,NA,NA,NA,NA
+DO51987,SP115021,< 65,female,0,progression,1,1054,A,3115,no treatment,,Mutated,195704913,high,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO51988,SP115022,< 65,male,0,stable,0,1572,A,1572,no treatment,,Mutated,192262572,low,high,low,high,high,low,NA,NA,NA,NA,NA,NA
+DO51989,SP115023,< 65,female,0,complete_remission,1,895,A,1931,no treatment,B,,209835610,high,low,low,low,low,low,mostly chemo and monoclonal antibody anti CD52,curative,no treatment,not applicable,yes,no
+DO51990,SP115024,> 65,male,0,progression,1,1129,A,1449,no treatment,,Mutated,218823884,high,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO51991,SP115025,< 65,male,0,stable,0,4529,A,4529,no treatment,,Mutated,332348582,low,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO51992,SP115026,< 65,female,0,complete_remission,1,3682,A,4788,no treatment,B,,278421111,low,high,low,low,low,low,mostly chemo and monoclonal antibody anti CD52,curative,no treatment,not applicable,yes,no
+DO51993,SP115027,> 65,female,0,partial_remission,1,1491,A,1784,no treatment,,Mutated,207400735,low,high,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO51994,SP115028,< 65,male,0,stable,0,1526,A,1526,no treatment,,Mutated,249352989,low,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO51995,SP115029,> 65,female,0,stable,0,3418,A,3418,no treatment,,Mutated,154861366,low,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO51996,SP115031,> 65,female,0,stable,0,5211,A,5211,no treatment,,Mutated,265649515,low,high,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO51998,SP115033,> 65,female,0,stable,0,1463,A,1463,no treatment,,Mutated,213767576,low,high,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO52000,SP115034,> 65,female,0,progression,1,2156,A,3196,no treatment,,Mutated,186971973,low,high,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO52002,SP115035,> 65,male,0,stable,0,1238,A,1238,no treatment,,Mutated,329937784,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO52003,SP115036,< 65,female,0,stable,0,3801,A,3801,no treatment,,Mutated,346804696,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO52006,SP115039,< 65,male,0,complete_remission,1,1205,A,1414,no treatment,,Mutated,333688809,high,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO52007,SP115041,< 65,female,0,stable,0,1704,A,1704,no treatment,,Mutated,222866517,low,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO52008,SP115042,< 65,male,0,stable,0,1828,A,1828,no treatment,,Mutated,207983860,low,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO52013,SP115045,< 65,male,0,stable,0,1502,A,1502,no treatment,,Mutated,370092030,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO52014,SP115046,< 65,male,0,stable,0,5304,A,5304,no treatment,,Mutated,227637980,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO52016,SP115047,< 65,male,0,partial_remission,1,919,A,1163,no treatment,,Mutated,225370467,low,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO52017,SP115048,> 65,male,0,stable,0,4320,A,4320,no treatment,,Mutated,186093032,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO52697,SP116727,< 65,male,0,stable,0,1719,A,1719,no treatment,,Mutated,180211259,low,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO52698,SP130143,< 65,male,0,complete_remission,1,95,B-C,2018,NA,,,120707643,high,high,low,low,high,low,mostly chemo and monoclonal antibody anti CD52,curative,chemotherapy,curative,yes,yes
+DO52699,SP124190,< 65,male,0,stable,1,3989,A,6277,no treatment,C,,145966611,high,low,low,high,low,low,chemotherapy,curative,chemotherapy,palliative,yes,yes
+DO52700,SP124174,< 65,male,0,stable,1,3383,A,7174,no treatment,C,,129737901,high,low,low,high,low,low,chemotherapy,curative,chemotherapy,palliative,yes,yes
+DO52701,SP124175,< 65,male,0,complete_remission,1,1356,A,5908,no treatment,A,,133464483,low,low,high,high,low,low,chemotherapy,curative,chemotherapy,curative,yes,yes
+DO52702,SP130144,> 65,male,0,complete_remission,1,1157,B-C,5315,NA,,,210411645,high,low,high,high,low,low,chemotherapy,palliative,chemotherapy,curative,yes,yes
+DO52703,SP130145,< 65,male,0,progression,1,1715,A,4429,NA,,,206487680,high,high,low,high,low,low,chemotherapy,curative,no treatment,not applicable,yes,no
+DO52704,SP124176,> 65,male,1,stable,0,1455,A,1455,no treatment,A,,216592789,low,low,low,high,low,low,no treatment,not applicable,no treatment,not applicable,no,no
+DO52705,SP124177,> 65,male,1,partial_remission,1,1943,A,2227,no treatment,A,,160876548,high,low,high,high,low,low,chemotherapy,palliative,no treatment,not applicable,yes,no
+DO52706,SP124178,> 65,female,0,complete_remission,1,1678,A,1914,no treatment,A,,288150479,low,low,low,high,low,low,chemotherapy,curative,no treatment,not applicable,yes,no
+DO52707,SP130149,> 65,male,0,progression,1,2705,A,4743,NA,,,137748320,low,low,high,high,low,low,chemotherapy,curative,chemotherapy,palliative,yes,yes
+DO52708,SP130150,> 65,male,0,partial_remission,1,0,B-C,2127,NA,,,182391568,high,low,low,low,low,low,mostly chemo and monoclonal antibody anti CD52,curative,chemotherapy,curative,yes,yes
+DO52710,SP124180,> 65,male,1,progression,1,525,A,1177,no treatment,B,,156537295,high,low,high,high,low,low,chemotherapy,palliative,chemotherapy,palliative,yes,yes
+DO52711,SP124181,< 65,male,1,stable,0,2698,A,2698,no treatment,A,,185003304,low,high,low,high,low,low,no treatment,not applicable,no treatment,not applicable,no,no
+DO52713,SP124182,< 65,female,0,stable,0,9075,A,9075,no treatment,A,,171840810,low,high,low,high,low,low,no treatment,not applicable,no treatment,not applicable,no,no
+DO52715,SP124183,< 65,male,0,complete_remission,1,3713,A,4762,no treatment,A,,187833742,high,low,low,low,low,high,mostly chemo and monoclonal antibody anti CD52,curative,mostly chemo and monoclonal antibody anti CD52,curative,yes,yes
+DO52716,SP124184,< 65,female,0,complete_remission,1,126,A,1310,no treatment,B,,177047898,low,high,low,low,low,high,mostly chemo and monoclonal antibody anti CD52,curative,no treatment,not applicable,yes,no
+DO52717,SP124185,> 65,female,1,progression,1,2201,A,2373,no treatment,C,,118037137,high,low,low,low,low,low,chemotherapy,palliative,mostly chemo and monoclonal antibody anti CD52,palliative,yes,yes
+DO52718,SP130160,< 65,male,0,stable,0,3087,A,3087,NA,,,189669090,low,low,low,high,low,low,chemotherapy,palliative,no treatment,not applicable,yes,no
+DO52720,SP124186,< 65,female,0,progression,1,1283,A,3034,no treatment,B,,143576558,high,low,low,high,low,low,mostly chemo and monoclonal antibody anti CD52,curative,chemotherapy,palliative,yes,yes
+DO52721,SP124187,> 65,male,0,stable,0,1560,A,1560,no treatment,A,,174625684,low,low,low,high,low,low,no treatment,not applicable,no treatment,not applicable,no,no
+DO52722,SP130170,> 65,female,0,unknown,1,1639,A,1729,NA,,,177335313,low,low,high,high,low,high,chemotherapy,palliative,no treatment,not applicable,yes,no
+DO52723,SP124188,< 65,male,0,complete_remission,1,1187,A,2429,no treatment,C,,361224722,high,low,high,high,low,low,mostly chemo and monoclonal antibody anti CD52,curative,no treatment,not applicable,yes,no
+DO52725,SP124189,> 65,female,0,stable,0,3285,A,3285,no treatment,A,,204916718,high,low,low,high,low,low,no treatment,not applicable,no treatment,not applicable,no,no
+DO6352,SP15194,< 65,male,0,complete_remission,1,0,B-C,5327,no treatment,C,,499322141,high,low,low,high,high,low,chemotherapy,curative,no treatment,not applicable,yes,no
+DO6353,SP15200,< 65,female,0,progression,1,1407,A,4452,no treatment,A,,317419708,high,low,high,high,high,low,mostly chemo and monoclonal antibody anti CD52,curative,no treatment,not applicable,yes,no
+DO6354,SP15206,< 65,male,0,complete_remission,1,1387,A,4473,no treatment,B,,142463592,high,low,low,high,high,high,mostly chemo and monoclonal antibody anti CD52,curative,chemotherapy,curative,yes,yes
+DO6356,SP15212,< 65,male,0,stable,1,4419,A,7206,no treatment,,Mutated,143715301,high,low,low,high,high,high,NA,NA,NA,NA,NA,NA
+DO6358,SP15218,< 65,male,0,stable,1,NA,B-C,3297,no treatment,,Unmutated,100225142,high,low,high,low,high,low,NA,NA,NA,NA,NA,NA
+DO6360,SP15224,< 65,male,1,progression,1,1176,A,4684,no treatment,B,,285709798,low,low,low,low,high,low,chemotherapy,curative,chemotherapy,curative,yes,yes
+DO6362,SP15230,> 65,male,0,complete_remission,1,182,B-C,1178,no treatment,B,,87546203,low,low,low,high,low,low,mostly chemo and monoclonal antibody anti CD52,curative,no treatment,not applicable,yes,no
+DO6364,SP15236,< 65,female,0,progression,1,2223,A,5535,no treatment,A,,136081947,high,low,low,low,low,low,mostly chemo and monoclonal antibody anti CD52,curative,no treatment,not applicable,yes,no
+DO6368,SP15248,< 65,male,0,complete_remission,1,690,A,4706,no treatment,B,,222319383,high,low,low,low,high,low,chemotherapy,curative,mostly chemo and monoclonal antibody anti CD52,curative,yes,yes
+DO6370,SP15254,< 65,male,0,partial_remission,1,2396,A,6965,no treatment,B,,232009723,high,low,high,low,low,low,chemotherapy,curative,mostly chemo and monoclonal antibody anti CD52,curative,yes,yes
+DO6372,SP15260,< 65,male,0,complete_remission,1,1097,A,6060,no treatment,,Unmutated,104660124,high,high,low,low,high,high,NA,NA,NA,NA,NA,NA
+DO6374,SP15266,> 65,male,1,progression,1,605,A,880,no treatment,,Mutated,93772323,high,high,low,low,high,high,NA,NA,NA,NA,NA,NA
+DO6376,SP15272,> 65,male,0,complete_remission,1,1253,A,4004,no treatment,,Mutated,84192536,high,low,low,low,low,high,NA,NA,NA,NA,NA,NA
+DO6382,SP15290,< 65,male,0,partial_remission,1,140,A,3929,no treatment,B,,92455130,high,high,low,high,high,high,mostly chemo and monoclonal antibody anti CD52,curative,mostly chemo and monoclonal antibody anti CD52,curative,yes,yes
+DO6386,SP15302,> 65,female,0,partial_remission,1,219,A,3280,no treatment,A,,155481290,high,low,low,low,high,high,chemotherapy,curative,chemotherapy,palliative,yes,yes
+DO6388,SP15308,< 65,male,1,stable,1,721,A,3158,no treatment,B,,134209491,low,low,low,low,high,low,mostly chemo and monoclonal antibody anti CD52,curative,chemotherapy,curative,yes,yes
+DO6390,SP15314,< 65,male,1,progression,1,796,A,4731,no treatment,B,,99508421,low,high,low,low,high,high,chemotherapy,curative,mostly chemo and monoclonal antibody anti CD52,curative,yes,yes
+DO6392,SP15320,> 65,female,0,partial_remission,1,63,A,2400,no treatment,,Mutated,75230474,high,high,low,high,low,high,NA,NA,NA,NA,NA,NA
+DO6394,SP15326,< 65,male,1,progression,1,545,A,2611,no treatment,B,,79400264,low,high,low,high,low,high,mostly chemo and monoclonal antibody anti CD52,curative,monoclonal antibodies (for liquid tumours),curative,yes,yes
+DO6396,SP15332,> 65,male,1,stable,0,2363,A,2363,no treatment,A,,76499145,high,low,low,high,low,low,no treatment,not applicable,no treatment,not applicable,no,no
+DO6402,SP15344,< 65,male,0,complete_remission,1,1220,A,3144,no treatment,B,,70820183,high,low,low,high,low,low,mostly chemo and monoclonal antibody anti CD52,curative,no treatment,not applicable,yes,no
+DO6404,SP15350,< 65,female,0,complete_remission,1,612,A,4308,no treatment,,Mutated,85672827,low,high,low,low,high,high,NA,NA,NA,NA,NA,NA
+DO6406,SP15356,< 65,male,1,progression,1,1631,A,1754,no treatment,,Mutated,71201381,high,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6410,SP15380,< 65,male,1,progression,1,385,A,2653,no treatment,A,,135863338,high,high,low,high,low,low,mostly chemo and monoclonal antibody anti CD52,curative,chemotherapy,curative,yes,yes
+DO6418,SP15398,< 65,male,1,progression,1,504,A,2057,no treatment,C,,88178076,low,high,low,high,low,high,mostly chemo and monoclonal antibody anti CD52,curative,no treatment,not applicable,yes,no
+DO6420,SP15404,< 65,female,0,complete_remission,1,3312,A,4591,no treatment,,Unmutated,109042020,low,low,high,high,low,high,NA,NA,NA,NA,NA,NA
+DO6422,SP15410,< 65,male,0,stable,0,6530,A,6530,no treatment,,Mutated,76454886,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6424,SP15416,> 65,male,0,stable,1,3023,A,3780,no treatment,,Unmutated,85195203,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6426,SP15422,< 65,male,0,progression,1,3620,A,5144,no treatment,,Unmutated,105579921,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6428,SP15428,> 65,female,1,progression,1,1626,A,2483,chemotherapy,A,,105681639,high,low,high,low,low,low,chemotherapy,curative,chemotherapy,curative,yes,yes
+DO6430,SP15440,< 65,male,1,progression,1,202,A,3650,no treatment,B,,73163374,low,low,low,high,low,low,mostly chemo and monoclonal antibody anti CD52,curative,chemotherapy,curative,yes,yes
+DO6432,SP15446,< 65,male,0,complete_remission,1,2006,A,3787,no treatment,B,,68083033,high,low,low,high,low,low,mostly chemo and monoclonal antibody anti CD52,curative,no treatment,not applicable,yes,no
+DO6434,SP15452,< 65,female,1,partial_remission,1,303,A,3407,no treatment,B,,108302460,high,high,low,high,low,low,mostly chemo and monoclonal antibody anti CD52,curative,mostly chemo and monoclonal antibody anti CD52,curative,yes,yes
+DO6438,SP15470,< 65,female,0,progression,1,539,A,4277,no treatment,B,,67280629,high,low,low,high,low,low,mostly chemo and monoclonal antibody anti CD52,curative,no treatment,not applicable,yes,no
+DO6440,SP15476,< 65,male,0,complete_remission,1,2,A,4327,no treatment,,Unmutated,95537004,high,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6444,SP15488,> 65,female,0,stable,0,4592,A,4592,no treatment,,Mutated,85449617,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6448,SP15500,< 65,male,0,stable,0,4060,A,4060,no treatment,,Mutated,102817082,low,high,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO6450,SP15512,< 65,male,0,progression,1,2223,A,4450,combined chemo+immunotherapy,C,,90810883,high,low,low,high,low,low,mostly chemo and monoclonal antibody anti CD52,curative,mostly chemo and monoclonal antibody anti CD52,curative,yes,yes
+DO6452,SP15518,> 65,male,0,stable,0,8429,A,8429,no treatment,,Mutated,107733824,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6454,SP15524,< 65,male,0,stable,0,8611,A,8611,no treatment,,Mutated,96720836,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6456,SP15536,> 65,female,1,progression,1,1411,A,3246,no treatment,B,,126818003,high,low,low,low,low,high,chemotherapy,curative,chemotherapy,curative,yes,yes
+DO6460,SP15554,< 65,male,0,stable,0,4421,A,4421,no treatment,,Mutated,76284736,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6464,SP15566,< 65,male,0,stable,0,3122,A,3122,no treatment,,Mutated,106402832,high,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6466,SP15578,> 65,female,1,progression,1,3336,A,4145,no treatment,,Unmutated,62860999,high,low,low,low,high,low,NA,NA,NA,NA,NA,NA
+DO6468,SP15584,< 65,male,0,complete_remission,1,237,A,1835,no treatment,,Mutated,74066172,low,high,low,low,low,high,NA,NA,NA,NA,NA,NA
+DO6470,SP15590,> 65,male,0,partial_remission,1,0,B-C,1630,no treatment,B,,82594186,low,high,high,low,high,low,mostly chemo and monoclonal antibody anti CD52,curative,no treatment,not applicable,yes,no
+DO6472,SP15602,> 65,male,0,progression,1,5124,A,6112,no treatment,,Mutated,33636836,high,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6474,SP15608,> 65,male,0,progression,1,1596,A,2596,no treatment,A,,67611313,low,low,high,high,low,low,chemotherapy,curative,no treatment,not applicable,yes,no
+DO6476,SP15614,< 65,male,0,stable,0,6524,A,6524,no treatment,,Mutated,54790202,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6478,SP15620,< 65,male,0,stable,0,6777,A,6777,no treatment,,Mutated,92820694,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6480,SP15626,< 65,female,0,stable,0,8579,A,8579,no treatment,,Mutated,36675852,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6482,SP15632,< 65,female,0,stable,0,7686,A,7686,no treatment,,Mutated,78849940,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6484,SP15638,< 65,male,0,stable,1,1392,A,5537,chemotherapy,,Mutated,44966074,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6486,SP15644,> 65,female,0,stable,0,4595,A,4595,no treatment,,Mutated,66727427,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6488,SP15650,> 65,male,0,stable,0,4764,A,4764,no treatment,,Mutated,67713329,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6492,SP15656,< 65,male,0,complete_remission,1,1900,A,3475,no treatment,C,,88613645,low,low,low,high,low,low,mostly chemo and monoclonal antibody anti CD52,curative,no treatment,not applicable,yes,no
+DO6494,SP15662,> 65,male,1,progression,1,1219,A,1317,no treatment,,Unmutated,63593508,high,high,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO6496,SP15668,< 65,male,0,complete_remission,1,747,A,1696,no treatment,,Unmutated,57552268,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6498,SP15674,> 65,male,0,stable,0,3597,A,3597,no treatment,,Mutated,100491413,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6501,SP15680,< 65,male,0,stable,1,8533,A,9663,no treatment,,Unmutated,48984716,low,low,high,high,low,low,NA,NA,NA,NA,NA,NA
+DO6504,SP15686,> 65,male,1,progression,1,2291,A,2543,no treatment,B,,67001024,low,low,low,low,low,low,chemotherapy,palliative,chemotherapy,curative,yes,yes
+DO6507,SP15692,> 65,female,0,stable,0,3343,A,3343,no treatment,,Mutated,98971024,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6510,SP15698,< 65,male,0,stable,0,5819,A,5819,no treatment,,Mutated,52067128,high,high,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO6513,SP15704,> 65,female,0,complete_remission,1,58,A,1807,no treatment,A,,93449329,high,low,low,high,low,low,monoclonal antibodies (for liquid tumours),curative,mostly chemo and monoclonal antibody anti CD52,palliative,yes,yes
+DO6516,SP15710,< 65,female,0,stable,0,3276,A,3276,no treatment,,Mutated,105821361,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6519,SP15716,> 65,female,0,stable,0,8405,A,8405,no treatment,,Mutated,95653527,high,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6522,SP15722,> 65,male,0,complete_remission,1,2314,A,3658,no treatment,,Unmutated,85711803,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6525,SP15728,> 65,female,0,stable,0,3263,A,3263,no treatment,,Mutated,45768994,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6528,SP15734,> 65,male,0,partial_remission,1,1341,A,2402,no treatment,,Mutated,88358769,low,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO6531,SP15740,> 65,female,0,stable,0,5034,A,5034,no treatment,,Mutated,114285277,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6534,SP15746,> 65,male,0,progression,1,2219,A,2930,no treatment,,Unmutated,55907784,low,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO6540,SP15752,< 65,male,0,complete_remission,1,3492,A,4692,no treatment,,Mutated,107443444,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6543,SP15758,> 65,female,0,progression,1,1918,A,2493,no treatment,,Unmutated,97106064,low,low,high,high,low,low,NA,NA,NA,NA,NA,NA
+DO6546,SP15764,< 65,male,0,stable,0,2893,A,2893,no treatment,,Mutated,83731788,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6549,SP130151,< 65,female,0,stable,0,3269,A,3269,NA,,,187852737,low,low,low,high,low,low,no treatment,not applicable,no treatment,not applicable,no,no
+DO6552,SP15770,< 65,male,1,progression,1,2374,A,2414,no treatment,C,,103028119,high,low,high,high,low,low,no treatment,not applicable,no treatment,not applicable,no,no
+DO6555,SP15776,> 65,female,0,stable,0,5871,A,5871,no treatment,,Mutated,80847277,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6558,SP15782,> 65,female,1,stable,0,1037,A,1037,no treatment,A,,72332982,high,low,low,high,low,low,no treatment,not applicable,no treatment,not applicable,no,no
+DO6561,SP15794,< 65,female,1,progression,1,140,A,686,no treatment,A,,136348881,high,low,low,high,low,low,mostly chemo and monoclonal antibody anti CD52,curative,mostly chemo and monoclonal antibody anti CD52,curative,yes,yes
+DO6565,SP15806,< 65,male,1,progression,1,596,A,1001,no treatment,A,,59199389,high,low,high,high,high,high,monoclonal antibodies (for liquid tumours),curative,chemotherapy,curative,yes,yes
+DO6568,SP130152,> 65,male,0,stable,0,3737,A,3737,NA,,,173523494,high,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO6580,SP15830,< 65,male,1,complete_remission,1,0,B-C,1153,no treatment,B,,146096097,high,low,low,high,low,low,mostly chemo and monoclonal antibody anti CD52,curative,no treatment,not applicable,yes,no
+DO6585,SP15842,> 65,male,0,stable,0,3327,A,3327,no treatment,A,,99173401,low,low,low,high,low,low,no treatment,not applicable,no treatment,not applicable,no,no
+DO6605,SP15866,> 65,male,0,stable,1,888,A,2898,no treatment,,Unmutated,186222256,high,high,high,low,low,low,NA,NA,NA,NA,NA,NA
+DO6610,SP15872,> 65,female,0,complete_remission,1,1308,B-C,2235,no treatment,B,,137920325,low,low,high,high,low,low,chemotherapy,palliative,chemotherapy,curative,yes,yes
+DO6615,SP15878,> 65,male,0,stable,0,3880,A,3880,no treatment,,Mutated,76997487,high,low,low,high,high,low,NA,NA,NA,NA,NA,NA
+DO6620,SP15890,< 65,male,0,stable,0,5465,A,5465,no treatment,,Mutated,86634084,high,low,low,low,high,low,NA,NA,NA,NA,NA,NA
+DO6625,SP15896,> 65,female,0,stable,0,1393,A,1393,no treatment,,Mutated,75519124,high,low,low,low,high,low,NA,NA,NA,NA,NA,NA
+DO6630,SP15902,> 65,female,0,stable,0,3241,A,3241,no treatment,,Mutated,300411833,high,low,high,high,high,low,NA,NA,NA,NA,NA,NA
+DO6635,SP15908,> 65,female,0,stable,0,1553,A,1553,no treatment,,Unmutated,229460596,low,low,low,high,high,low,NA,NA,NA,NA,NA,NA
+DO6640,SP15914,> 65,female,1,partial_remission,1,2740,A,3260,immunotherapy,,Unmutated,194252422,high,high,low,high,high,low,NA,NA,NA,NA,NA,NA
+DO6665,SP15956,< 65,male,0,complete_remission,1,2492,A,2963,no treatment,A,,146899960,high,low,low,high,low,low,chemotherapy,curative,no treatment,not applicable,yes,no
+DO6680,SP15974,< 65,male,0,partial_remission,1,1625,B-C,2262,no treatment,,Unmutated,203364260,high,high,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6690,SP15998,> 65,male,1,stable,1,8,B-C,94,no treatment,C,,139414891,high,high,low,low,low,low,chemotherapy,curative,no treatment,not applicable,yes,no
+DO6695,SP16028,> 65,female,0,stable,1,1931,A,2659,no treatment,A,,157198410,low,low,high,low,low,low,chemotherapy,palliative,mostly chemo and monoclonal antibody anti CD52,palliative,yes,yes
+DO6700,SP16040,< 65,female,0,stable,0,4119,A,4119,no treatment,,Mutated,131524854,high,low,high,high,low,low,NA,NA,NA,NA,NA,NA
+DO6730,SP16220,> 65,male,0,stable,0,2604,A,2604,no treatment,A,,129711355,high,low,high,high,low,high,no treatment,not applicable,no treatment,not applicable,no,no
+DO6736,SP16263,< 65,male,1,complete_remission,1,796,A,4222,no treatment,,Mutated,201669773,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6742,SP16281,< 65,male,0,progression,1,1661,A,5042,no treatment,B,,135117131,high,low,high,high,low,low,chemotherapy,curative,mostly chemo and monoclonal antibody anti CD52,curative,yes,yes
+DO6748,SP16317,> 65,male,0,complete_remission,1,1706,A,3572,no treatment,B,,123384849,high,low,low,high,low,low,mostly chemo and monoclonal antibody anti CD52,curative,no treatment,not applicable,yes,no
+DO6760,SP16359,< 65,male,0,stable,1,4290,A,6319,no treatment,,Unmutated,117601620,low,low,high,high,low,low,NA,NA,NA,NA,NA,NA
+DO6940,SP15548,> 65,male,1,progression,1,1393,A,1438,no treatment,B,,93997229,high,low,low,high,low,low,no treatment,not applicable,no treatment,not applicable,no,no
+DO6946,SP130147,< 65,male,0,complete_remission,1,178,A,1882,NA,,,181537599,high,low,high,high,low,low,mostly chemo and monoclonal antibody anti CD52,curative,no treatment,not applicable,yes,no
+DO6952,SP130148,< 65,female,0,stable,0,2630,A,2630,NA,,,165360708,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO6994,SP16238,< 65,female,0,complete_remission,1,2212,A,4326,no treatment,,Mutated,114106819,low,high,low,high,high,low,NA,NA,NA,NA,NA,NA
+DO7018,SP15506,< 65,male,0,stable,0,1288,A,1288,no treatment,A,,161318095,high,low,high,high,low,low,no treatment,not applicable,no treatment,not applicable,no,no
+DO7024,SP15530,< 65,male,0,stable,1,6656,A,9403,no treatment,C,,134611696,low,low,low,high,low,low,no treatment,not applicable,no treatment,not applicable,no,no
+DO7048,SP15788,< 65,male,0,stable,0,1978,A,1978,no treatment,,Mutated,100964396,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO7084,SP15992,< 65,male,1,progression,1,1789,A,1865,no treatment,A,,153430563,high,low,high,high,low,low,no treatment,not applicable,no treatment,not applicable,no,no
+DO7108,SP16022,< 65,male,0,stable,0,1868,A,1868,no treatment,A,,132033135,low,low,low,high,low,low,no treatment,not applicable,no treatment,not applicable,no,no
+DO7112,SP16034,> 65,male,0,stable,1,2961,A,3150,no treatment,A,,117019194,high,low,high,low,low,low,mostly chemo and monoclonal antibody anti CD52,curative,no treatment,not applicable,yes,no
+DO7118,SP16052,> 65,male,1,progression,1,833,A,1781,no treatment,,Mutated,204847339,low,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO7124,SP16058,> 65,male,1,progression,1,722,B-C,874,no treatment,B,,143429860,low,low,low,low,low,low,mostly chemo and monoclonal antibody anti CD52,palliative,chemotherapy,palliative,yes,yes
+DO7136,SP16070,< 65,female,0,stable,0,3873,A,3873,no treatment,A,,130068959,high,low,low,low,low,low,no treatment,not applicable,no treatment,not applicable,no,no
+DO7166,SP16100,< 65,male,0,complete_remission,1,906,A,1890,no treatment,A,,139710323,low,low,high,high,low,low,mostly chemo and monoclonal antibody anti CD52,curative,no treatment,not applicable,yes,no
+DO7172,SP16106,< 65,male,1,partial_remission,1,3879,A,5473,no treatment,A,,125127654,low,low,high,high,low,low,mostly chemo and monoclonal antibody anti CD52,curative,chemotherapy,curative,yes,yes
+DO7196,SP16136,> 65,male,0,stable,0,4665,A,4665,no treatment,A,,130027841,low,low,low,high,low,low,no treatment,not applicable,no treatment,not applicable,no,no
+DO7214,SP16154,> 65,female,0,stable,1,2921,A,3985,no treatment,A,,124529277,low,low,low,low,low,low,chemotherapy,palliative,no treatment,not applicable,yes,no
+DO7226,SP16172,> 65,female,0,stable,0,7062,A,7062,no treatment,,Mutated,133233391,high,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO7262,SP16208,> 65,male,0,stable,0,1061,A,1061,no treatment,,Mutated,163450738,high,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO7274,SP130161,< 65,male,0,complete_remission,1,3640,A,4543,NA,,,206306066,high,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO7280,SP16244,< 65,male,0,partial_remission,1,2053,A,2369,no treatment,A,,135501581,high,low,high,high,low,low,chemotherapy,curative,no treatment,not applicable,yes,no
+DO7304,SP16269,< 65,male,0,complete_remission,1,986,A,2113,no treatment,B,,150316569,low,low,high,high,low,low,mostly chemo and monoclonal antibody anti CD52,curative,no treatment,not applicable,yes,no
+DO7322,SP16293,< 65,female,1,stable,1,5843,A,8141,chemotherapy,A,,129063813,high,low,low,high,low,low,chemotherapy,curative,no treatment,not applicable,yes,no
+DO7328,SP16299,< 65,male,0,complete_remission,1,1401,A,1828,no treatment,A,,141138287,high,low,low,low,low,low,mostly chemo and monoclonal antibody anti CD52,curative,no treatment,not applicable,yes,no
+DO7334,SP16305,> 65,female,0,partial_remission,1,1786,A,2030,no treatment,,,176745352,high,low,low,low,low,high,NA,NA,NA,NA,NA,NA
+DO7394,SP16437,< 65,female,0,complete_remission,1,1863,A,2409,no treatment,,Unmutated,181929759,low,low,high,low,low,low,NA,NA,NA,NA,NA,NA
+DO7406,SP16449,> 65,male,0,stable,0,1083,A,1083,no treatment,,Mutated,245700649,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO7412,SP16455,> 65,female,0,stable,0,1884,A,1884,no treatment,,Mutated,161741007,low,high,low,low,high,low,NA,NA,NA,NA,NA,NA
+DO7418,SP16461,< 65,male,0,complete_remission,1,770,A,1281,no treatment,,Mutated,246776117,high,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO7424,SP16467,< 65,male,0,stable,0,2044,A,2044,no treatment,,Mutated,185177359,high,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO7430,SP16473,< 65,female,0,stable,0,1244,A,1244,no treatment,,Mutated,179001112,high,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO7436,SP16479,< 65,female,0,stable,0,1313,A,1313,no treatment,,Mutated,171991870,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO7442,SP16485,< 65,male,0,complete_remission,0,1106,B-C,1106,no treatment,,Unmutated,129849188,low,low,high,high,low,high,NA,NA,NA,NA,NA,NA
+DO7448,SP16491,> 65,male,0,stable,0,862,A,862,no treatment,,Unmutated,189696353,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO7454,SP16497,< 65,male,0,stable,0,845,A,845,no treatment,,Mutated,186416734,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO7460,SP16503,< 65,female,0,stable,0,748,A,748,no treatment,,Mutated,158432144,low,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO7466,SP16509,< 65,male,0,partial_remission,1,832,A,1223,no treatment,,,155737087,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO7472,SP16515,> 65,male,0,partial_remission,1,138,B-C,1049,no treatment,,Unmutated,192887630,high,low,high,high,low,high,NA,NA,NA,NA,NA,NA
+DO7478,SP16521,< 65,male,0,stable,0,5238,A,5238,no treatment,,Mutated,213388036,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO7484,SP16527,< 65,male,0,stable,0,7274,A,7274,,,,177484634,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO7490,SP16533,< 65,male,0,stable,0,3161,A,3161,no treatment,,Mutated,165710172,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO7496,SP16539,> 65,female,0,stable,0,4579,A,4579,no treatment,,Mutated,145447374,high,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO7502,SP16545,< 65,male,0,stable,0,5270,A,5270,no treatment,,Mutated,175606389,low,low,low,low,low,low,NA,NA,NA,NA,NA,NA
+DO7505,SP16551,> 65,female,0,stable,0,634,A,634,no treatment,,Mutated,259082525,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO7511,SP16557,> 65,female,0,stable,0,5144,A,5144,no treatment,,Mutated,175692796,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
+DO7517,SP16563,> 65,male,0,stable,0,6302,A,6302,no treatment,,,156961409,low,low,low,high,low,low,NA,NA,NA,NA,NA,NA
