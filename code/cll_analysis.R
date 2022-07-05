@@ -11,9 +11,13 @@ library(ggplot2)
 library(Hmisc)
 library(genefilter)
 library(writexl)
-library(psych)
+#library(psych)
+library(sva)
+library(factoextra)
+library(nlme)
+library(apeglm)
+library(org.Hs.eg.db)
 
-mart <- useDataset("hsapiens_gene_ensembl", useMart("ensembl"))
 
 # Functions
 surv_plot <- function(fit, max_time, title){
@@ -125,7 +129,6 @@ f.shapiro.stat <- function(x, n_diff_numbers = 3) {
   res <- ifelse(sum(!is.na(unique(x))) < n_diff_numbers, NA, as.numeric(shapiro.test(x)$p.value))
   return(res)
 }
-
 
 
 # 0. IMPORT RNA-SEQ DATA --------------------------------------------------------------------------------------------------------------------
@@ -299,8 +302,9 @@ cll_donor_data$sex <- as.factor(cll_donor_data$sex)
 
 
 # Save metadata
-write.csv(cll_donor_data, "./metadata/clinical_prepr_metadata/cll_metadata.csv", sep = ",", col.names = TRUE,
-          row.names = F)
+# write.csv(cll_donor_data, "./metadata/clinical_prepr_metadata/cll_metadata.csv", sep = ",", col.names = TRUE,
+#          row.names = F)
+
 
 # 3. NORMALIZATION WITH DESEQ2 -----------------------------------------------------------------------------------------------
 dds_cll_data <- DESeqDataSetFromMatrix(countData = cll_data_id_version,
@@ -340,11 +344,9 @@ colnames(cll_donor_data_surv)
 gene_level_slp <- colnames(cll_donor_data_surv)[c(12, 14, 16:20)]
 gene_level_slp
 
-
 # Storing the variables used to divide gene expression into high and low for SG.
 gene_level_sg <- colnames(cll_donor_data_surv)[c(13, 15, 16:20)]
 gene_level_sg
-
 
 # Bucle to generate several plots in once time and save them into a file.
 for(i in 1:length(gene_level_slp)){
@@ -374,8 +376,6 @@ for(i in 1:length(gene_level_slp)){
   )
   dev.off()
 }
-
-
 
 
 # 5. GENE-GENE CORRELATION ANALYSIS --------------------------------------------------------------------------------------------------------
@@ -542,11 +542,123 @@ cll_donor_data$IGHV_status[cll_donor_data$IGHV_status == ""] <- NA
 cll_donor_data %>% filter(!(is.na(IGHV_status))) %>% select(PIEZO1_level_maxstat_SLP, IGHV_status) %>% table() %>% fisher.test()
 
 # Save complete metadata
-
-write.csv(cll_donor_data, "./metadata/clinical_prepr_metadata/cll_clinical_data.csv", row.names = F)
+# write.csv(cll_donor_data, "./metadata/clinical_prepr_metadata/cll_clinical_data.csv", row.names = F)
 
 
 rm(list = ls())
+
+
+## 7. DIFFERENTIAL GENE EXPRESSION ANALYSIS --------------------------------------------------------------------------------------------------------------
+
+# Imput data and metadata
+cll_counts <- read.table("https://media.githubusercontent.com/media/andresarroyobarea/CLL_project/main/data/rna_seq_count_matrix_norm.tsv", sep = "\t", check.names = F)
+cll_metadata <- read.csv("./metadata/clinical_prepr_metadata/cll_es_clinical_data_RNA_seq.csv", sep = ",", check.names = F)
+
+
+# Modify rows in both columns
+rownames(cll_counts) <- gsub("\\..*", "", rownames(cll_counts))
+rownames(cll_metadata) <- cll_metadata$icgc_donor_id
+
+# as.int
+cll_counts[] <- lapply(cll_counts, as.integer)
+
+# as.factor gene levels
+cll_metadata[, 15:20] <- lapply(cll_metadata[, 15:20], as.factor)
+cll_metadata$sex <- factor(cll_metadata$sex)
+
+# Confirmation that samples in columns from matrix and rows from metadata are in the same order.
+all(rownames(cll_metadata) == colnames(cll_counts))
+
+# Filter genes with 0 counts in all samples.
+keep <- rowSums(cll_counts) != 0
+cll_counts <- cll_counts[keep, ]
+
+# DESEQ design for MYC
+dds_myc <- DESeqDataSetFromMatrix(countData = cll_counts,
+                                  colData = cll_metadata,
+                                  design = ~ sex + MYC_level_maxstat_SLP)
+
+dds_norm <- vst(dds_myc)
+
+# It seems that samples are clustered diagonally by sex, so this variable was included in the model 
+plotPCA(
+  dds_norm,
+  intgroup = c("MCL1_level_maxstat_SLP")
+)
+
+plotPCA(
+  dds_norm,
+  intgroup = c("sex")
+)
+
+# DESEQ analysis
+dds <- DESeq(dds_myc)
+
+# Resultados son log2(low/high). Valores negativos indican sobre expressión en high MYC patients y valores positivos sobreexpresion en "low" MYC patients.
+res <- results(dds)
+
+# Filter DEGs with abs (log2FC) > 2 and p-adj < 0.1
+res_filtered <- as.data.frame(res[abs(res$log2FoldChange) > 1.5 & res$pvalue < 0.05, ])
+
+# First column is not relevant because is the same gene that we are studying.
+res_filtered <- res_filtered[-1, ]
+
+# Map ensembl id to gene symbol.
+res_filtered$ENSEMBL <- rownames(res_filtered)
+
+ens2symbol <- AnnotationDbi::select(org.Hs.eg.db,
+                                    key = res_filtered$ENSEMBL, 
+                                    columns = "SYMBOL",
+                                    keytype = "ENSEMBL")
+
+res_filtered <- merge(res_filtered, ens2symbol, by = "ENSEMBL")
+
+# Order by p-value
+res_filtered <- res_filtered[order(res_filtered$pvalue), ]
+
+res_filtered <- res_filtered %>% relocate(SYMBOL, .after = ENSEMBL)
+
+
+# Extract DEGs table
+write_xlsx(res_filtered, "./results/DGE_analysis/myc/DEGs_table.xlsx")
+
+
+# Log fold change shrinkage for visualization and ranking
+resLFC <- lfcShrink(dds, coef = "MYC_level_maxstat_SLP_low_vs_high", type = "apeglm")
+DESeq2::plotMA(resLFC, ylim = c(-4, 4))
+resLFC <- as.data.frame(resLFC)
+
+# Table with genes ranked by shrinked log2FC in decreased order was extracted to perform GSEA.
+resLFC$ENSEMBL <- rownames(resLFC)
+
+
+
+
+
+# 8. ADD NEW METADATA FROM SUPPLEMENTARY MATERIAL ------------------------------------------------------------------------------------------------------
+supp_metadata <- read.csv("./metadata/clinical_raw_metadata/supplementary_info_CLL.csv", header = T, check.names = F, sep = ",", stringsAsFactors = F)
+donor_full_met <-read.csv("./metadata/clinical_raw_metadata/full_donor_CLLE_ES.tsv", header = T, check.names = F, sep = "\t", stringsAsFactors = F)
+
+# Select relevant columns in supplementary metadata.
+supp_metadata <- supp_metadata %>% select(Case, Type, `IGHV status`, `IGHV gene`, Epigenetic)
+colnames(supp_metadata)[c(1, 3:4)] <- c("submitted_donor_id", "ighv_status", "ighv_gene")
+
+# Filter donor full metadata by patientes with RNA-seq data to extract submitted_donor_id because supplementary metadata is named by this parameter.
+donor_full_met <- donor_full_met %>% filter(icgc_donor_id %in% cll_metadata$icgc_donor_id) %>% select(icgc_donor_id, submitted_donor_id)
+
+# Filter supplementary metadata with RNA-seq patients.
+supp_metadata <- supp_metadata %>% filter(icgc_donor_id %in% cll_metadata$icgc_donor_id)
+
+# Add submitted_donor_id to cll_metadata.
+cll_metadata <- merge(cll_metadata, donor_full_met, by = "icgc_donor_id")
+
+# Merge CLL metadata with supplementary metadata.
+cll_metadata <- merge(cll_metadata, supp_metadata, by = "submitted_donor_id")
+
+
+# Save metadata
+write.csv(cll_metadata, "./metadata/clinical_prepr_metadata/cll_metadata_updated.csv", sep = ",", col.names = TRUE,
+          row.names = F)
 
 
 
